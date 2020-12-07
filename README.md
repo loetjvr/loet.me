@@ -4,15 +4,18 @@
 
 Portfolio website for Loet Jansen van Rensburg
 
-
 ## Tech stack
+
 ### Frontend
-* Gatsby
-* Typescript
-* React
+
+- Gatsby
+- Typescript
+- React
 
 ### Database
-* Contentful
+
+- Contentful
 
 ### CI
-* Netlify
+
+- Netlify
