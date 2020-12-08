@@ -1,6 +1,6 @@
 // Initialize dotenv
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+  path: `.env.${process.env.NODE_ENV}` // or '.env'
 });
 
 const config = require('gatsby-plugin-config').default;
@@ -40,7 +40,8 @@ module.exports = {
         accessToken: config.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true
       }
-    }
+    },
+    `gatsby-theme-material-ui`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
