@@ -1,8 +1,15 @@
+// Initialize dotenv
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+});
+
+const config = require('gatsby-plugin-config').default;
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    title: `loet.me`,
+    description: `Portfolio website for Loet Jansen van Rensburg`,
+    author: `@loetjvr`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,20 +25,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `loet.me`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        icon: `src/images/icon.png` // This path is relative to the root of the site.
       }
     },
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.CONTENTFUL_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: config.CONTENTFUL_ID,
+        accessToken: config.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true
       }
     }
