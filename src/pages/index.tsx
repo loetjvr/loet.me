@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from "gatsby-theme-material-ui";
+import { Link } from 'gatsby-theme-material-ui';
 
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
-const IndexPage = () => (
+const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Home" />
     <h1>HOME PAGE</h1>
