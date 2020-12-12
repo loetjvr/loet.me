@@ -1,8 +1,8 @@
 import React from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
-import HeaderItem from '../components/HeaderItem';
-import '../styles/reset.css';
+import HeaderItem from '.';
+import '../../styles/reset.css';
 
 export default {
   title: 'loet.me/HeaderItem',
