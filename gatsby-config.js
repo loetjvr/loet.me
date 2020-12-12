@@ -41,7 +41,6 @@ module.exports = {
         downloadLocal: true
       }
     },
-    `gatsby-theme-material-ui`,
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
