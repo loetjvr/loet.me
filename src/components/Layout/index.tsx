@@ -8,7 +8,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import ThemeTopLayout from 'gatsby-theme-material-ui-top-layout/src/components/top-layout';
-import theme from '../../themes';
+import { theme } from '../../themes';
 
 import Header from '../Header';
 

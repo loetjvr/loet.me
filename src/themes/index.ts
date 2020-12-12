@@ -11,8 +11,8 @@ const theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: 'Roboto'
+    fontFamily: 'Montserrat'
   }
 });
 
-export default theme;
+export { colors, theme };
