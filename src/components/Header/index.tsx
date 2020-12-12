@@ -1,51 +1,38 @@
 import { navigate } from 'gatsby';
 import React from 'react';
-import { Title } from './styles';
+import HeaderItem from '../HeaderItem';
+import Logo from '../Logo';
+import { Container } from './styles';
 
-interface Header {
-  siteTitle: string;
-}
-
-const Header = ({ siteTitle }: Header): JSX.Element => {
+const Header = (): JSX.Element => {
   const path = location.pathname;
 
   const onNav = (path: string) => () => {
     navigate(path);
   };
 
-  const onUrl = (path: string) => () => {
-    window.open(path, '_blank');
-  };
+  // const onUrl = (path: string) => () => {
+  //   window.open(path, '_blank');
+  // };
+
+  const isSelected = p => p === path;
 
   return (
-    <div position="static">
-      <div>
-        <div color="inherit">
-          <MenuIcon />
-        </div>
-        <Title variant="h6">{siteTitle}</Title>
-        <div selected={path === '/'} onClick={onNav('/')}>
-          About
-        </div>
-        <div selected={path === '/games'} onClick={onNav('/games')}>
-          Games
-        </div>
-        <div selected={path === '/mobile'} onClick={onNav('/mobile')}>
-          Mobile
-        </div>
-        <div selected={path === '/web'} onClick={onNav('/web')}>
-          Web
-        </div>
-        <div onClick={onUrl('https://github.com/loetjvr')}>Github</div>
-        <div
-          onClick={onUrl(
-            'https://www.linkedin.com/in/loet-jansen-van-rensburg-9a0a6a86'
-          )}
-        >
-          LinkedIn
-        </div>
-      </div>
-    </div>
+    <Container>
+      <HeaderItem selected={isSelected('/')} onClick={onNav('/')}>
+        About
+      </HeaderItem>
+      <HeaderItem selected={isSelected('/games')} onClick={onNav('/games')}>
+        Games
+      </HeaderItem>
+      <Logo />
+      <HeaderItem selected={isSelected('/mobile')} onClick={onNav('/mobile')}>
+        Mobile
+      </HeaderItem>
+      <HeaderItem selected={isSelected('/web')} onClick={onNav('/web')}>
+        Web
+      </HeaderItem>
+    </Container>
   );
 };
 

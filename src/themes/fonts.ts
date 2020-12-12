@@ -10,6 +10,10 @@ const sizes = {
   large: 144
 };
 
+const sizesSmall = {
+  medium: 20
+};
+
 const styles = {
   small: `
     font-family: ${types.montserrat};
@@ -22,15 +26,14 @@ const styles = {
   medium: `
     font-family: ${types.tinos};
     font-size: ${sizes.medium}px;
+    @media (max-width: 520px) {
+      font-size: ${sizesSmall.medium}px;
+    };
   `,
   large: `
     font-family: ${types.tinos};
     font-size: ${sizes.large}px;
-  `,
-  menu: `
-    font-family: ${types.tinos};
-    font-size: 4vw;
   `
 };
 
-export default { types, sizes, styles };
+export default { styles };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from './styles';
+import { Container, Text } from './styles';
 
 interface HeaderItem {
   children: string;
@@ -13,9 +13,9 @@ const HeaderItem = ({
   onClick
 }: HeaderItem): JSX.Element => {
   return (
-    <Text selected={selected} onClick={onClick}>
-      {children}
-    </Text>
+    <Container onClick={onClick}>
+      <Text selected={selected}>{children}</Text>
+    </Container>
   );
 };
 

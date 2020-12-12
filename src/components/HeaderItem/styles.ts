@@ -5,9 +5,15 @@ interface Props {
   selected: boolean;
 }
 
-export const Text = styled.a<Props>`
-  ${fonts.styles.menu};
+export const Container = styled.div`
+  display: flex;
+  flex-grow: 1;
   cursor: pointer;
+  justify-content: center;
+`;
+
+export const Text = styled.a<Props>`
+  ${fonts.styles.medium};
   color: ${({ selected }: Props) => (selected ? colors.primary : colors.black)};
   text-decoration: ${({ selected }: Props) =>
     selected ? 'underline' : 'none'};
