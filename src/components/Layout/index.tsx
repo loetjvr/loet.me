@@ -6,8 +6,8 @@
  */
 
 import React from 'react';
-
 import Header from '../Header';
+import Background from '../Background';
 
 interface Layout {
   children: JSX.IntrinsicElements;
@@ -16,6 +16,7 @@ interface Layout {
 const Layout = ({ children }: Layout): JSX.Element => {
   return (
     <div>
+      <Background />
       <Header />
       <main>{children}</main>
       <footer>
