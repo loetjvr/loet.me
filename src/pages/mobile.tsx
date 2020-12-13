@@ -1,17 +1,15 @@
 import { Link } from 'gatsby';
 import React from 'react';
-
-import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 
-const IndexPage = (): JSX.Element => (
-  <Layout>
+const MobilePage = (): JSX.Element => (
+  <>
     <SEO title="Mobile" />
     <h1>MOBILE PAGE</h1>
     <Link to="/">Home</Link> <br />
     <Link to="/games/">Games</Link> <br />
     <Link to="/web/">Web</Link>
-  </Layout>
+  </>
 );
 
-export default IndexPage;
+export default MobilePage;
