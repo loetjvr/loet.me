@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Text } from './styles';
 
 interface Title {
@@ -6,8 +6,11 @@ interface Title {
 }
 
 const Title = ({ children }: Title): JSX.Element => {
+  // random margin left percent between 0 -100
+  const [margin] = useState(Math.floor(Math.random() * 100));
+
   return (
-    <Container>
+    <Container margin={margin}>
       <Text>{children}</Text>
     </Container>
   );

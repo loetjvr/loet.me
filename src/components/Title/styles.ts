@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import { fonts, colors } from '../../themes';
 
-const margin = Math.random() * 100;
+interface Props {
+  margin: number;
+}
 
-export const Container = styled.div`
+export const Container = styled.div<Props>`
   display: flex;
   flex-grow: 1;
-  margin-left: ${margin}%;
+  margin-left: ${({ margin }: Props) => margin}%;
 `;
 
 export const Text = styled.h2`
