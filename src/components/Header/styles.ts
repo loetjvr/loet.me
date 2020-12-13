@@ -12,6 +12,6 @@ export const Container = styled.div`
   justify-content: center;
   background-color: ${colors.white};
   padding: ${metrics.baseMargin}px 0;
-  max-width: 800px;
+  max-width: ${metrics.headerWidth}px;
   margin: 0 auto;
 `;

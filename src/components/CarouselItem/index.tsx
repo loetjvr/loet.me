@@ -1,10 +1,6 @@
 import React from 'react';
+import { Orientation } from '../Carousel';
 import { Container, Image } from './styles';
-
-export enum Orientation {
-  portrait,
-  landscape
-}
 
 interface CarouselItem {
   image: string;

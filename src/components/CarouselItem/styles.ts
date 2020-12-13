@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Orientation } from '.';
+import { Orientation } from '../Carousel';
 
 interface Props {
   orientation: Orientation;
