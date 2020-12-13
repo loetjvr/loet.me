@@ -22,7 +22,7 @@ const IconButton = ({ icon, onClick, color }: IconButton): JSX.Element => {
   );
 };
 
-IconButton.defaults = {
+IconButton.defaultProps = {
   colors: colors.primary
 };
 
