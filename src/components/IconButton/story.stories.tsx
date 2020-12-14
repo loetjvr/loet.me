@@ -3,7 +3,6 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import IconButton from '.';
-import '../../styles/reset.css';
 import { colors } from '../../themes';
 
 export default {

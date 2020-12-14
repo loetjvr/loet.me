@@ -3,7 +3,6 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import CarouselItem from '.';
 import { Orientation } from '../Carousel';
-import '../../styles/reset.css';
 
 export default {
   title: 'loet.me/CarouselItem',
