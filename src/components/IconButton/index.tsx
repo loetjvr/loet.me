@@ -8,15 +8,21 @@ interface IconButton {
   icon: IconProp;
   color: string;
   onClick: () => void;
+  size?: number;
 }
 
-const IconButton = ({ icon, onClick, color }: IconButton): JSX.Element => {
+const IconButton = ({
+  icon,
+  onClick,
+  color,
+  size
+}: IconButton): JSX.Element => {
   // between 50 - 70
   // 20 = 70 - 50
-  const [size] = useState(Math.floor(Math.random() * 20) + 50);
+  const [s] = useState(size ? size : Math.floor(Math.random() * 20) + 50);
 
   return (
-    <Container onClick={onClick} color={color} size={size}>
+    <Container onClick={onClick} color={color} size={s}>
       <FontAwesomeIcon icon={icon} color={colors.white} size="lg" />
     </Container>
   );

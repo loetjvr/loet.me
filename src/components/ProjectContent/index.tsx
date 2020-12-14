@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { colors } from '../../themes';
+import IconButton from '../IconButton';
 import {
   Container,
   TopContainer,
   Date,
   RightContainer,
-  Company,
+  Text,
   Role,
-  BottomContainer
+  BottomContainer,
+  Tech,
+  LinkContainer
 } from './styles';
 
 interface ProjectContent {
@@ -14,7 +19,7 @@ interface ProjectContent {
   company: string;
   roles: string[];
   tech: string[];
-  link: string;
+  link?: string;
 }
 
 const ProjectContent = ({
@@ -24,16 +29,34 @@ const ProjectContent = ({
   tech,
   link
 }: ProjectContent): JSX.Element => {
+  const roleString = useState(roles.join(', '));
+  const techString = useState(tech.map(m => m.toLowerCase()).join(', '));
+
+  const onLink = () => {
+    window.open(link, '_blank');
+  };
+
   return (
     <Container>
+      {link ? (
+        <LinkContainer>
+          <IconButton
+            size={50}
+            color={colors.primary}
+            icon={faExternalLinkAlt}
+            onClick={onLink}
+          />
+        </LinkContainer>
+      ) : null}
       <TopContainer>
         <Date>{year}</Date>
         <RightContainer>
-          <Role>{roles.join(', ')}</Role>
-          <Company>{company}</Company>
+          <Role>{roleString}</Role>
+          <Text>by {company}</Text>
+          <Tech>{techString}</Tech>
         </RightContainer>
       </TopContainer>
-      <BottomContainer>{tech.join(', ')}</BottomContainer>
+      <BottomContainer />
     </Container>
   );
 };
