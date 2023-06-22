@@ -3,8 +3,6 @@ export interface Props {
 	title: string;
 }
 
-import image from "../assets/banner.webp";
-
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title } = Astro.props;
 const description =
@@ -47,14 +45,14 @@ const links = [
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content="loet.me" />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL(image, Astro.url)} />
+		<meta property="og:image" content="/banner.webp" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={Astro.url} />
 		<meta property="twitter:title" content="loet.me" />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		<meta property="twitter:image" content="/banner.webp" />
 
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400&display=swap");

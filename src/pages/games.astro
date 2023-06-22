@@ -1,15 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 const languages = ["c#", "objective-c"];
 const frontend = ["unity", "cocos2d"];
-const images = [
-	"../assets/games/1.jpg",
-	"../assets/games/2.jpg",
-	"../assets/games/3.jpg",
-	"../assets/games/4.jpg",
-];
+const images = ["/games/1.jpg", "/games/2.jpg", "/games/3.jpg", "/games/4.jpg"];
 ---
 
 <Layout title="loet.me - games">
@@ -55,10 +50,12 @@ const images = [
 		>
 			{
 				images.map((m) => (
-					<Image
-						src={import(m)}
-						alt="descriptive text"
+					<Picture
+						src={m}
+						alt="game"
 						class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500"
+						widths={[384, 512, 658]}
+						aspectRatio="16:9"
 					/>
 				))
 			}

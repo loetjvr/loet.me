@@ -1,22 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 const languages = ["typescript", "javascript", "java", "objective-c"];
 const frontend = ["react-native", "ios", "android", "ionic"];
 const databases = ["firebase"];
 const images = [
-	"../assets/mobile/1.jpg",
-	"../assets/mobile/2.jpg",
-	"../assets/mobile/3.jpg",
-	"../assets/mobile/4.jpg",
-	"../assets/mobile/5.jpg",
-	"../assets/mobile/6.jpg",
-	"../assets/mobile/7.jpg",
-	"../assets/mobile/8.jpg",
-	"../assets/mobile/9.jpg",
-	"../assets/mobile/10.jpg",
-	"../assets/mobile/11.jpg",
+	"/mobile/1.jpg",
+	"/mobile/2.jpg",
+	"/mobile/3.jpg",
+	"/mobile/4.jpg",
+	"/mobile/5.jpg",
+	"/mobile/6.jpg",
+	"/mobile/7.jpg",
+	"/mobile/8.jpg",
+	"/mobile/9.jpg",
+	"/mobile/10.jpg",
+	"/mobile/11.jpg",
 ];
 ---
 
@@ -84,10 +84,12 @@ const images = [
 		>
 			{
 				images.map((m) => (
-					<Image
-						src={import(m)}
-						alt="descriptive text"
+					<Picture
+						src={m}
+						alt="mobile"
 						class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500"
+						widths={[384, 512, 658]}
+						aspectRatio="16:9"
 					/>
 				))
 			}
