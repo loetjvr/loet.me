@@ -1,63 +1,169 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Layout from "../layouts/Layout.astro";
+
+const languages = [
+	"typescript",
+	"javascript",
+	"c#",
+	"objective-c",
+	"android",
+	"java",
+	"php",
+];
+const frontend = [
+	"html5",
+	"css",
+	"tailwind",
+	"react",
+	"solid",
+	"qwik",
+	"next",
+	"astro",
+	"preact",
+	"unity",
+	"cocos2d",
+];
+const backend = ["node", "express", "nest", "aws"];
+const databases = [
+	"mysql",
+	"postgres",
+	"mongodb",
+	"dynamodb",
+	"firebase",
+	"planetscale",
+	"prisma",
+	"kysely",
+];
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
-	heroImage="/placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<Layout title="loet.me - about">
+	<div
+		class="flex flex-col px-10 md:p-0 space-y-20 md:space-y-0 md:flex-row text-white"
+	>
+		<div class="md:w-1/2 md:pl-20">
+			<h1 class="text-6xl text-white uppercase font-montserrat font-bold">
+				Loet Jansen van Rensburg <span
+					class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+					>fullstack software engineer with 10 years of experience</span
+				>
+			</h1>
+			<h2 class="text-lg">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-4 h-4 inline text-pink-500"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+						clip-rule="evenodd"></path>
+				</svg>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+				{languages.join(" . ")}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-4 h-4 inline text-pink-500"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z"
+						clip-rule="evenodd"></path>
+				</svg>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+				{frontend.join(" . ")}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-4 h-4 inline text-pink-500"
+				>
+					<path
+						d="M5.507 4.048A3 3 0 017.785 3h8.43a3 3 0 012.278 1.048l1.722 2.008A4.533 4.533 0 0019.5 6h-15c-.243 0-.482.02-.715.056l1.722-2.008z"
+					></path>
+					<path
+						fill-rule="evenodd"
+						d="M1.5 10.5a3 3 0 013-3h15a3 3 0 110 6h-15a3 3 0 01-3-3zm15 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm2.25.75a.75.75 0 100-1.5.75.75 0 000 1.5zM4.5 15a3 3 0 100 6h15a3 3 0 100-6h-15zm11.25 3.75a.75.75 0 100-1.5.75.75 0 000 1.5zM19.5 18a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+						clip-rule="evenodd"></path>
+				</svg>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+				{backend.join(" . ")}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-4 h-4 inline text-pink-500"
+				>
+					<path
+						d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875z"
+					></path>
+					<path
+						d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 001.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 001.897 1.384C6.809 12.164 9.315 12.75 12 12.75z"
+					></path>
+					<path
+						d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 15.914 9.315 16.5 12 16.5z"
+					></path>
+					<path
+						d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 19.664 9.315 20.25 12 20.25z"
+					></path>
+				</svg>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+				{databases.join(" . ")}
+			</h2>
+		</div>
+		<div
+			class="md:w-1/2 flex flex-col items-center justify-center space-y-10"
+		>
+			<a
+				href="https://www.linkedin.com/in/loet-jansen-van-rensburg-9a0a6a86"
+				class="transition-colors duration-500 hover:text-[#0A66C2] hover:animate-spin"
+			>
+				<svg
+					role="img"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-28 h-28"
+					xmlns="http://www.w3.org/2000/svg"
+					><title>LinkedIn</title><path
+						d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+					></path></svg
+				>
+			</a>
+			<a
+				href="https://github.com/loetjvr"
+				class="transition-colors duration-500 hover:text-gray-500 hover:animate-spin"
+			>
+				<svg
+					role="img"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-28 h-28"
+					xmlns="http://www.w3.org/2000/svg"
+					><title>GitHub</title><path
+						d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+					></path></svg
+				>
+			</a>
+			<a
+				href="mailto:loet@rawrcreations.com"
+				class="transition-colors duration-500 hover:text-purple-500 hover:animate-spin"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-28 h-28"
+				>
+					<path
+						d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+					></path>
+					<path
+						d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+					></path>
+				</svg>
+			</a>
+		</div>
+	</div>
 </Layout>

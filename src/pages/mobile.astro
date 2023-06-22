@@ -2,40 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "@astrojs/image/components";
 
-const languages = ["typescript", "javascript"];
-const frontend = [
-	"html5",
-	"css",
-	"tailwind",
-	"react",
-	"solid",
-	"qwik",
-	"next",
-	"astro",
-	"preact",
-];
-const backend = ["node", "express", "nest", "aws"];
-const databases = [
-	"mysql",
-	"postgres",
-	"mongodb",
-	"dynamodb",
-	"firebase",
-	"planetscale",
-	"prisma",
-	"kysely",
-];
+const languages = ["typescript", "javascript", "java", "objective-c"];
+const frontend = ["react-native", "ios", "android", "ionic"];
+const databases = ["firebase"];
 const images = [
-	"../../assets/web/1.jpg",
-	"../../assets/web/2.jpg",
-	"../../assets/web/3.jpg",
-	"../../assets/web/4.jpg",
-	"../../assets/web/5.jpg",
-	"../../assets/web/6.jpg",
+	"../../assets/mobile/1.jpg",
+	"../../assets/mobile/2.jpg",
+	"../../assets/mobile/3.jpg",
+	"../../assets/mobile/4.jpg",
+	"../../assets/mobile/5.jpg",
+	"../../assets/mobile/6.jpg",
+	"../../assets/mobile/7.jpg",
+	"../../assets/mobile/8.jpg",
+	"../../assets/mobile/9.jpg",
+	"../../assets/mobile/10.jpg",
+	"../../assets/mobile/11.jpg",
 ];
 ---
 
-<Layout title="loet.me - web">
+<Layout title="loet.me - mobile">
 	<div class="flex flex-row text-white">
 		<div class="w-1/2 pl-20">
 			<h1 class="text-6xl text-white uppercase font-montserrat font-bold">
@@ -71,22 +56,6 @@ const images = [
 				</svg>
 
 				{frontend.join(" . ")}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="w-4 h-4 inline text-pink-500"
-				>
-					<path
-						d="M5.507 4.048A3 3 0 017.785 3h8.43a3 3 0 012.278 1.048l1.722 2.008A4.533 4.533 0 0019.5 6h-15c-.243 0-.482.02-.715.056l1.722-2.008z"
-					></path>
-					<path
-						fill-rule="evenodd"
-						d="M1.5 10.5a3 3 0 013-3h15a3 3 0 110 6h-15a3 3 0 01-3-3zm15 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm2.25.75a.75.75 0 100-1.5.75.75 0 000 1.5zM4.5 15a3 3 0 100 6h15a3 3 0 100-6h-15zm11.25 3.75a.75.75 0 100-1.5.75.75 0 000 1.5zM19.5 18a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-						clip-rule="evenodd"></path>
-				</svg>
-
-				{backend.join(" . ")}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"

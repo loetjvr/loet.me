@@ -1,0 +1,85 @@
+---
+export interface Props {
+	title: string;
+}
+
+import image from "../../assets/banner.webp";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title } = Astro.props;
+const description =
+	"Loet fullstack software engineer with 10 years of experience";
+const links = [
+	{
+		name: "web",
+		href: "/",
+	},
+	{
+		name: "mobile",
+		href: "/mobile",
+	},
+	{
+		name: "games",
+		href: "/games",
+	},
+	{
+		name: "about",
+		href: "/about",
+	},
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content="loet.me" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content="loet.me" />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400&display=swap");
+		</style>
+	</head>
+	<body class="font-roboto h-full overflow-hidden bg-black">
+		<header
+			class="mx-auto text-purple-100 space-x-4 text-2xl uppercase font-light flex flex-row justify-center z-10 relative"
+		>
+			{
+				links.map((m) => (
+					<a
+						class={`px-1  pt-20 transition-colors duration-500 ${
+							Astro.url.pathname.endsWith(m.href)
+								? "text-pink-400 bg-white"
+								: "hover:text-pink-400 hover:bg-white"
+						}`}
+						href={m.href}>
+						{m.name}
+					</a>
+				))
+			}
+		</header>
+		<main class="py-20">
+			<slot />
+		</main>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+
+const languages = ["c#", "objective-c"];
+const frontend = ["unity", "cocos2d"];
+const images = [
+	"../../assets/games/1.jpg",
+	"../../assets/games/2.jpg",
+	"../../assets/games/3.jpg",
+	"../../assets/games/4.jpg",
+];
+---
+
+<Layout title="loet.me - games">
+	<div class="flex flex-row text-white">
+		<div class="w-1/2 pl-20">
+			<h1 class="text-6xl text-white uppercase font-montserrat font-bold">
+				Loet Jansen van Rensburg <span
+					class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+					>fullstack software engineer with 10 years of experience</span
+				>
+			</h1>
+			<h2 class="text-lg">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-4 h-4 inline text-pink-500"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+						clip-rule="evenodd"></path>
+				</svg>
+
+				{languages.join(" . ")}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					class="w-4 h-4 inline text-pink-500"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z"
+						clip-rule="evenodd"></path>
+				</svg>
+
+				{frontend.join(" . ")}
+			</h2>
+		</div>
+		<div
+			class="w-full lg:w-1/2 absolute top-0 right-0 overflow-scroll h-screen"
+		>
+			{
+				images.map((m) => (
+					<Image
+						src={import(m)}
+						alt="descriptive text"
+						class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500"
+					/>
+				))
+			}
+		</div>
+	</div>
+</Layout>
