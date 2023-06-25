@@ -6,17 +6,20 @@ const languages = ["typescript", "javascript", "java", "objective-c"];
 const frontend = ["react-native", "ios", "android", "ionic"];
 const databases = ["firebase"];
 const images = [
-	"/mobile/1.jpg",
-	"/mobile/2.jpg",
-	"/mobile/3.jpg",
-	"/mobile/4.jpg",
-	"/mobile/5.jpg",
-	"/mobile/6.jpg",
-	"/mobile/7.jpg",
-	"/mobile/8.jpg",
-	"/mobile/9.jpg",
-	"/mobile/10.jpg",
-	"/mobile/11.jpg",
+	{
+		img: "/mobile/1.jpg",
+		link: "https://apps.apple.com/us/app/flixy/id1441090136",
+	},
+	{ img: "/mobile/2.jpg" },
+	{ img: "/mobile/3.jpg" },
+	{ img: "/mobile/4.jpg" },
+	{ img: "/mobile/5.jpg" },
+	{ img: "/mobile/6.jpg" },
+	{ img: "/mobile/7.jpg" },
+	{ img: "/mobile/8.jpg" },
+	{ img: "/mobile/9.jpg" },
+	{ img: "/mobile/10.jpg" },
+	{ img: "/mobile/11.jpg" },
 ];
 ---
 
@@ -85,15 +88,27 @@ const images = [
 			class="w-full lg:w-1/2 absolute top-0 right-0 overflow-scroll h-screen"
 		>
 			{
-				images.map((m) => (
-					<Picture
-						src={m}
-						alt="mobile"
-						class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500"
-						widths={[384, 512, 658]}
-						aspectRatio="16:9"
-					/>
-				))
+				images.map((m) =>
+					m.link ? (
+						<a href={m.link} target="_blank">
+							<Picture
+								src={m.img}
+								alt="web"
+								class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500 object-fill"
+								widths={[384, 512, 658]}
+								aspectRatio="16:9"
+							/>
+						</a>
+					) : (
+						<Picture
+							src={m.img}
+							alt="web"
+							class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500 object-fill"
+							widths={[384, 512, 658]}
+							aspectRatio="16:9"
+						/>
+					)
+				)
 			}
 		</div>
 	</div>

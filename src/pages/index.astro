@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image, Picture } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 const languages = ["typescript", "javascript"];
 const frontend = [
@@ -26,14 +26,40 @@ const databases = [
 	"kysely",
 ];
 const images = [
-	"/web/1.jpg",
-	"/web/2.jpg",
-	"/web/3.jpg",
-	"/web/4.jpg",
-	"/web/5.jpg",
-	"/web/6.jpg",
-	"/web/7.jpg",
-	"/web/8.jpg",
+	{
+		img: "/web/1.jpg",
+	},
+	{
+		img: "/web/2.jpg",
+	},
+	{
+		img: "/web/3.jpg",
+	},
+	{
+		img: "/web/4.jpg",
+	},
+	{
+		img: "/web/5.jpg",
+	},
+	{
+		img: "/web/6.jpg",
+		link: "https://addabit.com",
+	},
+	{
+		img: "/web/7.jpg",
+	},
+	{
+		img: "/web/8.jpg",
+		link: "https://xchange.axelarigato.com",
+	},
+	{
+		img: "/web/9.jpg",
+		link: "https://netaporter.reflaunt.com",
+	},
+	{
+		img: "/web/10.jpg",
+		link: "https://orcscribe.com",
+	},
 ].reverse();
 ---
 
@@ -118,15 +144,27 @@ const images = [
 			class="w-full lg:w-1/2 absolute top-0 right-0 overflow-scroll h-screen"
 		>
 			{
-				images.map((m) => (
-					<Picture
-						src={m}
-						alt="web"
-						class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500 object-fill"
-						widths={[384, 512, 658]}
-						aspectRatio="16:9"
-					/>
-				))
+				images.map((m) =>
+					m.link ? (
+						<a href={m.link} target="_blank">
+							<Picture
+								src={m.img}
+								alt="web"
+								class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500 object-fill"
+								widths={[384, 512, 658]}
+								aspectRatio="16:9"
+							/>
+						</a>
+					) : (
+						<Picture
+							src={m.img}
+							alt="web"
+							class="opacity-30 hover:opacity-100 w-full transition-opacity duration-500 object-fill"
+							widths={[384, 512, 658]}
+							aspectRatio="16:9"
+						/>
+					)
+				)
 			}
 		</div>
 	</div>
